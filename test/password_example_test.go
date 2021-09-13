@@ -2,14 +2,17 @@ package test
 
 import (
 	"fmt"
-	"github.com/gruntwork-io/terratest/modules/terraform"
 	"testing"
+
+	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
 func TestPasswordExample(t *testing.T) {
 	opts := &terraform.Options{
 		TerraformDir: "../password",
 	}
+
+	defer terraform.Destroy(t, opts)
 
 	terraform.Init(t, opts)
 	terraform.Apply(t, opts)
