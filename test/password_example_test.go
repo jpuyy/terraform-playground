@@ -1,9 +1,9 @@
 package test
 
 import (
-	"testing"
-
+	"fmt"
 	"github.com/gruntwork-io/terratest/modules/terraform"
+	"testing"
 )
 
 func TestPasswordExample(t *testing.T) {
@@ -13,4 +13,7 @@ func TestPasswordExample(t *testing.T) {
 
 	terraform.Init(t, opts)
 	terraform.Apply(t, opts)
+
+	password_output := terraform.OutputRequired(t, opts, "random_password")
+	fmt.Println(password_output)
 }
