@@ -9,3 +9,7 @@ output "virtual_services" {
 output "region_env_ids" {
   value = local.region_env_ids
 }
+
+output "accounts" {
+  value = local.accounts
+}

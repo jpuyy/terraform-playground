@@ -39,6 +39,12 @@ locals {
     }
   ]
 
+  accounts = [
+    "user:foobar",
+    "sa:gke",
+    "sa:gke"
+  ]
+
   service_entries_tuple = flatten([for service in local.service_name_list : [
     [for ns_region, ns_env_group in local.region_env_mapping :
       {

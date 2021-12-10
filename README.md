@@ -1,6 +1,7 @@
 
 
 ```
+terraform -version
 terraform plan
 terraform apply
 ```
