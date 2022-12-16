@@ -1,0 +1,3 @@
+variable "ccc" {
+  type = string
+}
